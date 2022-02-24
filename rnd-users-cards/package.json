@@ -2,7 +2,7 @@
   "name": "rnd-users-cards",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nsokolov114.github.io/react/test",
+  "homepage": "https://nsokolov114.github.io/react/rnd-users-cards/build",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
