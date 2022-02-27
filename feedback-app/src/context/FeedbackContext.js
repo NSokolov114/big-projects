@@ -11,30 +11,54 @@ export const FeedbackProvider = ({ children }) => {
       rating: 10,
     },
     {
-      id: 1,
+      id: 2,
       text: 'This is feedback item #2',
       rating: 5,
     },
     {
-      id: 1,
+      id: 3,
       text: 'This is feedback item #3',
       rating: 6,
     },
   ]);
 
+  const [feedbackEdit, setFeedbackEdit] = useState({
+    item: {},
+    edit: false,
+  });
+
+  // add feedback
   const addFeedback = newFeedback => {
     newFeedback.id = uuidv4();
     setFeedback([newFeedback, ...feedback]);
   };
 
+  // delete feedback
   const deleteFeedback = id => {
     if (window.confirm('Are you sure?')) {
       setFeedback(feedback.filter(item => item.id !== id));
     }
   };
 
+  // update feedback item
+  const updateFeedback = (id, updItem) => {
+    setFeedback(feedback.map(item => (item.id === id ? { ...item, ...updItem } : item)));
+  };
+
+  // set item to be updated
+  const editFeedback = item => {
+    setFeedbackEdit({
+      item,
+      edit: true,
+    });
+  };
+
   return (
-    <FeedbackContext.Provider value={{ feedback, deleteFeedback, addFeedback }}>{children}</FeedbackContext.Provider>
+    <FeedbackContext.Provider
+      value={{ feedback, feedbackEdit, deleteFeedback, addFeedback, editFeedback, updateFeedback }}
+    >
+      {children}
+    </FeedbackContext.Provider>
   );
 };
 
