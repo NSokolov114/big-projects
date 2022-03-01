@@ -14,8 +14,12 @@ function About() {
         </strong>
         .
       </p>
+      <p className="mb-4 text-2xl font-light">
+        Limited by <strong>10</strong> requests to the GitHub API per minute.
+      </p>
+
       <p className="text-lg text-gray-400">
-        Version:&nbsp;<span className="text-white">1.1</span>
+        Version:&nbsp;<span className="text-white">1.2</span>
       </p>
       <p className="text-lg text-gray-400">
         Layout By:&nbsp;
